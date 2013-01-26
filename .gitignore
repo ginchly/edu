@@ -18,3 +18,4 @@ doc/
 
 # ignore files with api keys
 config/initializers/omniauth.rb
+config/facebook.yml
