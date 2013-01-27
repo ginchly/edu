@@ -20,9 +20,12 @@
     	<td><%= index+1 %></td>
 	    <td><%= link_to user.name, user %></td>
 	    <td><%= user.points %></td>
-	    <% if user.points < 50 %>
-    	<td><%= image_tag("WW_badge_wizard.png", alt: "word wizard badge", class: "leaderboard-badge") %></td>
+	    <% badges = (user.points / 100).round %>
+	    <td>
+	    	<% for i in 1..badges %>
+    	<%= image_tag("WW_badge_wizard.png", alt: "word wizard badge", class: "leaderboard-badge") %>
     	<% end %>
+    	</td>
     </tr>
   <% end %>
 

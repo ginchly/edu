@@ -2,6 +2,9 @@
 <div class="row-fluid">
 	<div class="span12">
 		<h1>Badges for <%= @user.name %></h1>
-<% if @user.points < 50 %>
-<td><%= image_tag("WW_badge_wizard.png", alt: "word wizard badge", class: "leaderboard-badge-profile") %></td>
-<% end %>
+	    <% badges = (@user.points / 100).round %>
+	    
+	    <% for i in 1..badges %>
+    	<%= image_tag("WW_badge_wizard.png", alt: "word wizard badge", class: "leaderboard-badge") %>
+    	<% end %>
+    	
