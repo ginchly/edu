@@ -61,7 +61,7 @@ function loadQuestion() {
 	$(questionClass).addClass("active");
 	//render buttons
 	for (var i = 0; i < questions.all_questions.length; i++)  {
-		$("#answer-buttons").append("<button type='button' class='answer-btn btn btn-large btn-primary'>" + questions.all_questions[i].word + "</button>");
+		$("#answer-buttons").append("<button type='button' class='answer-btn btn btn-xlarge btn-primary'>" + questions.all_questions[i].word + "</button>");
 	}
 
 
