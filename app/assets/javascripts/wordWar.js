@@ -60,6 +60,8 @@ function loadQuestion() {
 	var questionClass = "#question-" + qNumber;
 	$(questionClass).addClass("active");
 
+	var prevQuestionClass = "#question-" + (qNumber-1);
+
 	var qNumberClass = "#qNumber-" + qNumber;
 	$(qNumberClass).removeClass("badge-default");
 	$(qNumberClass).addClass("badge-warning");

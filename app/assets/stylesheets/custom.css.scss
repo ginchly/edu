@@ -263,6 +263,12 @@ footer {
   }
 }
 
+#number-points-small-screen {
+  @media screen and (min-width: 643px) { 
+    display: none;
+  }
+}
+
 .question-table.inactive {
   border: 1px solid #6c6c6c;
   tr {
@@ -322,9 +328,29 @@ footer {
     margin-right:auto;
     .btn {
       margin-bottom: 15px;
-      margin-right: 10px;
+      margin-left: 4%;
+      margin-right: 4%;
+      width: 42%;
+      padding-left: 10%;
+      padding-right: 10%;
+      text-align: center;
+      font-size: 1em;
+    @media screen and (max-width: 650px) { 
+      margin-left: 15%;
+      margin-right: 15%;
+      width: 70%;
     }
+
+    }
+
   } 
+
+
+}
+
+.answer-btn {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /**
