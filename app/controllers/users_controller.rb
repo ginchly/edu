@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
-  	 @users = User.all
+  	 @users = User.order('points DESC').all
   end
 
   def update_points
