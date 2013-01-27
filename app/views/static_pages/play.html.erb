@@ -24,6 +24,10 @@
         <tr><td>Question 5</td></tr>
       </tbody>
     </table>
+
+    <div class="player-a points-counter"><div class="number-points">0</div>Points</div>
+    <button type="button" class="btn btn-large btn-success disable">Complete</button>
+
   </div> <!-- end span 2 -->
 
 	  <div class="span8 game-inner-container">
@@ -35,7 +39,7 @@
 
 
 	  	<!-- end timer -->
-	  	
+
 	  	<div class="question-text">
 	  		<% question = get_question() %>
 	  		<%= question["part1"] %>
