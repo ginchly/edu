@@ -6,27 +6,51 @@
       <table class="table-bordered table question-table">
       <thead>
         <tr>
-          <th><img src=<%= current_user.image %> alt="profile photo">
-          	<div><%= current_user.name %></div></th>
+        	<th>
+        	<% if current_user %>
+             <img src=<%= current_user.image %> alt="profile photo">
+          	<div><%= current_user.name %></div>
+            <% else %>
+              <div>Anonymous</div>
+            <% end %>
+
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr>
         	<td>
         		<div class="question-mark-box">?</div>
-        		<span class="inner-text"> 1 </span>
+        		<span id="question-1" class="inner-text"> 1 </span>
         		<div class="marking-box">?</div>
         	</td>
         </tr>
-        <tr><td>Question 2</td></tr>
-        <tr><td>Question 3</td></tr>
-        <tr><td>Question 4</td></tr>
-        <tr><td>Question 5</td></tr>
+        <tr>
+        	<td>	
+        		<span id="question-2" class="inner-text"> 2 </span>
+        	</td>
+        </tr>
+        <tr>
+        	<td>	
+        		<span id="question-2" class="inner-text"> 3 </span>
+        	</td>
+        </tr>
+        <tr>
+        	<td>	
+        		<span id="question-2" class="inner-text"> 4 </span>
+        	</td>
+        </tr>
+        <tr>
+        	<td>	
+        		<span id="question-2" class="inner-text"> 5 </span>
+        	</td>
+        </tr>
+
       </tbody>
     </table>
 
-    <div class="player-a points-counter"><div class="number-points">0</div>Points</div>
-    <button type="button" class="btn btn-large btn-success disable">Complete</button>
+
+    <div class="player-a points-counter"><div id="number-points">0</div>Points</div>
 
   </div> <!-- end span 2 -->
 
@@ -39,22 +63,25 @@
 
 
 	  	<!-- end timer -->
+	  	<!-- get some questions -->
+	  	<% question = get_question() %>
+	  	<script> localStorage.setItem('questions', '<%=question.to_json.html_safe%>'); </script>
+
 
 	  	<div class="question-text">
-	  		<% question = get_question() %>
-	  		<%= question["part1"] %>
-	  		<span id="answer" class="hidden-answer"> BLANK </span>
-	  		<%= question["part2"] %>
+			<span id="part1"></span>	
+	  		<span id="answer" class="hidden-answer"></span>
+	  		<span id="part2"></span>	
 	  	</div>
 
-	  	<div class="answer-buttons">
-		  <% get_all_words().each do |word| %>
-		  	<% if word["word"] == question["word"] %>
-			<button type="button" class="btn btn-large btn-warning correct"><%= word["word"] %></button>
-			<% else %>
-			<button type="button" class="btn btn-large btn-primary"><%= word["word"] %></button>
-			<% end %>
-		  <% end %>
+	  	<div class="well" id="start-btn" style="max-width: 400px; margin: 0 auto 10px;">
+              <button type="button" class='btn btn-large btn-block btn-success' onclick="startQuiz()">Start</button>
+        </div>
+	  	
+
+	  	
+	  	<div id="answer-buttons">
+		  
 		</div>
 
 	  </div>

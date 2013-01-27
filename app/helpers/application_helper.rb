@@ -2,7 +2,7 @@ module ApplicationHelper
 
   # Returns the full title on a per-page basis.
   def full_title(page_title)
-    base_title = "WordWar"
+    base_title = "WordWars"
     if page_title.empty?
       base_title
     else
@@ -25,16 +25,9 @@ module ApplicationHelper
   		topic = "Geography"
   		topicQuestions = Question.where("topic = ?", topic)
   	end
-  		
-  	rand_id = rand(topicQuestions.count)
-  	question = topicQuestions[rand_id]
-  	question
-  end
 
-  def get_all_words()
-  	topic = [params[:topic]]
-  	words = Question.select(:word).where("topic = ?", topic)
-
+  	question = topicQuestions
+  	all_questions = {"all_questions" => question}
   end
 
 end

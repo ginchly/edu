@@ -1,4 +1,4 @@
-(function($){
+function setupCountdown($){
 
 	// Number of seconds in every time division
 	var days	= 24*60*60,
@@ -128,4 +128,4 @@ function switchDigit(position,number){
 		});
 }
 
-})(jQuery);
+}

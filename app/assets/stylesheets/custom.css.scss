@@ -273,7 +273,7 @@ footer {
     text-align: center;
   }
 
-  .answer-buttons {
+  #answer-buttons {
     padding-left: 30px;
     padding-right: 30px;
     .btn {
@@ -290,7 +290,7 @@ footer {
   border-radius:0.5em;
   padding-bottom: 5px;
   text-align: center;
-  .number-points {
+  #number-points {
     font-family: 'Kavoon', cursive;
     text-align: center;
     font-size: 5em;
@@ -389,4 +389,34 @@ footer {
 //game stuff
 .hidden-answer {
   color: red;
+}
+
+
+/* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+.leaderboard-badge {
+  width: 80px;
+}
+
+.leaderboard-badge-profile {
+  width: 180px;
+}
+
+.user-page-container {
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-bottom: 200px;
 }
