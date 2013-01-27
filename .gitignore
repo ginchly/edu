@@ -17,5 +17,5 @@ doc/
 .idea
 
 # ignore files with api keys
-config/initializers/omniauth.rb
-config/facebook.yml
+#config/initializers/omniauth.rb
+#config/facebook.yml
