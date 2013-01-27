@@ -18,13 +18,13 @@ $(function() {
       <ul class="nav pull-right">
             <li><%= link_to "Play", play_path, id: "header-play-link" %></li>
       </ul>
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <a class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
           <div class="nav-collapse collapse pull-right">
-          <ul class="nav">
+          <ul class="nav pull-right">
             <li><%= link_to "Leaderboard", users_path, id: "header-users-link" %></li>
               <% if current_user %>
                 <!-- <li><%= link_to current_user.name, current_user %></li> -->

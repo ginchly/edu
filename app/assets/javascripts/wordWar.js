@@ -59,6 +59,11 @@ function loadQuestion() {
 
 	var questionClass = "#question-" + qNumber;
 	$(questionClass).addClass("active");
+
+	var qNumberClass = "#qNumber-" + qNumber;
+	$(qNumberClass).removeClass("badge-default");
+	$(qNumberClass).addClass("badge-warning");
+	
 	//render buttons
 	
 	for (var i = 1; i < questions.all_questions.length; i++)  {

@@ -257,6 +257,12 @@ footer {
   }
 }
 
+ .qNumber {
+  @media screen and (min-width: 643px) { 
+    display: none;
+  }
+}
+
 .question-table.inactive {
   border: 1px solid #6c6c6c;
   tr {
@@ -304,7 +310,7 @@ footer {
     padding-bottom: 20px;
     text-align: center;
 
-    @media screen and (min-width: 640px) { 
+    @media screen and (min-width: 650px) { 
       font-size: 3em;
     }
   }
@@ -347,7 +353,7 @@ footer {
     font-size: 5em;
     line-height: 1em;
   }
-  @media screen and (max-width: 640px) { 
+  @media screen and (max-width: 645px) { 
     display: none;
   }
 }
