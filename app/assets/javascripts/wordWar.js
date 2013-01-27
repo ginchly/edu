@@ -108,6 +108,7 @@ function correctAnswer(answer) {
 	oldScore = $("#number-points").text();
 	newScore = Number(oldScore) + addPoints;
 	$("#number-points").text(newScore);
+	$("#number-points-small-screen").text(newScore + " points");
 	$("#answer").text(answer + " is correct!");
 	finishQuestion();
 
