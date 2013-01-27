@@ -1,9 +1,20 @@
-<div class="center hero-unit">
-  <h1>Welcome to WordWar</h1>
+<div class="row-fluid">
+<div class="span12 game-container">
+
+<div class="offset2 span8 game-inner-container">
+  <h1>Welcome to Word Wars</h1>
 
   <h2>
  	Challenge your friends, win prizes!
   </h2>
 
-  <%= link_to "Play now!", "/play" , class: "btn btn-large btn-primary" %>
+  	  	
+        <%= link_to "Science", "/play?topic=Science" , class: 'btn btn-large btn-block btn-success' %>
+        <%= link_to "Geography", "/play?topic=Geography" , class: 'btn btn-large btn-block btn-success' %>
+        <%= link_to "History", "/play?topic=history" , class: 'btn btn-large btn-block btn-success' %>
+        
+</div>
+</div>
+
+</div>
 </div>

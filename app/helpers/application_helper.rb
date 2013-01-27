@@ -26,8 +26,9 @@ module ApplicationHelper
   		topicQuestions = Question.where("topic = ?", topic)
   	end
 
-  	question = topicQuestions
-  	all_questions = {"all_questions" => question}
+    #return array in random order to mix up the questions
+  	question = topicQuestions.sort_by { rand }
+  	all_questions = {"all_questions" => question[0..5]}
   end
 
 end

@@ -1,3 +1,16 @@
+<script>
+$(function() {
+  var loc = window.location.href; // returns the full URL
+  if(/play/.test(loc)) {
+    $('#header-play-link').addClass('active-header-link');
+  }
+  if(/users/.test(loc)) {
+    $('#header-users-link').addClass('active-header-link');
+  }
+});
+
+</script>
+
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
@@ -7,7 +20,7 @@
 
         <ul class="nav pull-right">
           <li><%= link_to "Play", play_path, id: "header-play-link" %></li>
-          <li><%= link_to "Leaderboard", users_path %></li>
+          <li><%= link_to "Leaderboard", users_path, id: "header-users-link" %></li>
             <% if current_user %>
               <!-- <li><%= link_to current_user.name, current_user %></li> -->
               <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
