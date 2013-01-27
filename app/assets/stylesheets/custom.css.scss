@@ -1,8 +1,23 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+
+$smallBoxRadius: 2px;
+$medBoxRadius: 8px;
+$largeBoxRadius: 8px;
+
+
+$wwNavy: #33434e;
+$tableInactive: #909090;
+
+$questionInfoBoxColorTop: #86be6b;
+$questionInfoBoxColorBottom: #63a343;
+$markingBoxColorTop: #149fec;
+$markingBoxColorBottom: #0186ce;
+
 
 /* universal */
 
@@ -58,8 +73,15 @@ p {
 
 
 /* header */
-
 #logo {
+
+  float: left;
+  padding-left: 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#logo-text {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
@@ -73,6 +95,12 @@ p {
     color: white;
     text-decoration: none;
   }
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: $wwNavy;
+  background-image: none;
+
 }
 
 /* footer */
@@ -99,4 +127,201 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+.game-container {
+  background: $wwNavy;
+  -webkit-border-radius: $largeBoxRadius;
+  -moz-border-radius: $largeBoxRadius;
+  border-radius: $largeBoxRadius;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.question-mark-box {
+  width: 25px;
+  display:inline-block;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: $smallBoxRadius;
+  -moz-border-radius: $smallBoxRadius;
+  border-radius: $smallBoxRadius;
+
+  -moz-box-shadow: 1px 1px 1px #888;
+  -webkit-box-shadow: 1px 1px 1px #888;
+  box-shadow: 1px 1px 1px #888;
+
+  background: $questionInfoBoxColorTop; /* Old browsers */
+  background: -moz-linear-gradient(top,  $questionInfoBoxColorTop 0%, $questionInfoBoxColorBottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$questionInfoBoxColorTop), color-stop(100%,$questionInfoBoxColorBottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $questionInfoBoxColorTop 0%,$questionInfoBoxColorBottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $questionInfoBoxColorTop 0%,$questionInfoBoxColorBottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $questionInfoBoxColorTop 0%,$questionInfoBoxColorBottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $questionInfoBoxColorTop 0%,$questionInfoBoxColorBottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$questionInfoBoxColorTop', endColorstr='$questionInfoBoxColorBottom',GradientType=0 ); /* IE6-9 */
+
+}
+
+.marking-box {
+  @extend .question-mark-box;
+  float: right;
+  background: $markingBoxColorTop; /* Old browsers */
+  background: -moz-linear-gradient(top,  $markingBoxColorTop 0%, $markingBoxColorBottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$markingBoxColorTop), color-stop(100%,$markingBoxColorBottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $markingBoxColorTop 0%,$markingBoxColorBottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $markingBoxColorTop 0%,$markingBoxColorBottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $markingBoxColorTop 0%,$markingBoxColorBottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $markingBoxColorTop 0%,$markingBoxColorBottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$markingBoxColorTop', endColorstr='$markingBoxColorBottom',GradientType=0 ); /* IE6-9 */
+
+}
+
+.question-table {
+  th {
+    text-align: center;
+    background: #b4b4b4;
+  }
+  td .inner-text {
+    text-align: center;
+    margin-left: 10px;
+  }
+  td {
+    padding: 10px;
+    background: #f0f0f0;
+  }
+}
+
+.question-table.inactive {
+  border: 1px solid #6c6c6c;
+  tr {
+    border: 1px solid #6c6c6c;
+  }
+  th {
+    background: $tableInactive;
+    color: #6c6c6c;
+    border: none;
+  }
+  td .inner-text {
+    margin-left: 10px;
+    color: #6c6c6c
+  }
+  td {
+    background: $tableInactive;
+    border: none;
+  }
+  .marking-box {
+    background: $tableInactive;
+    color: #6c6c6c
+  }
+  .question-mark-box {
+    background: $tableInactive;
+    color: #6c6c6c
+  }
+}
+
+.game-inner-container {
+  background: #fff; 
+  -webkit-border-radius: $medBoxRadius;
+  -moz-border-radius: $medBoxRadius;
+  border-radius: $medBoxRadius;
+  min-height: 400px;
+
+  .question-text {
+    font-family: 'Kavoon', cursive;
+    text-align: center;
+    font-size: 5em;
+    line-height: 1em;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+
+//timer
+
+.countdownHolder{
+  width:450px;
+  margin:0 auto;
+  font: 40px/1.5 'Open Sans Condensed',sans-serif;
+  text-align:center;
+  letter-spacing:-3px;
+}
+
+.position{
+  display: inline-block;
+  height: 1.6em;
+  overflow: hidden;
+  position: relative;
+  width: 1.05em;
+}
+
+.digit{
+  position:absolute;
+  display:block;
+  width:1em;
+  background-color:#444;
+  border-radius:0.2em;
+  text-align:center;
+  color:#fff;
+  letter-spacing:-1px;
+}
+
+.digit.static{
+  box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+  
+  background-image: linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+  background-image: -o-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+  background-image: -moz-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+  background-image: -webkit-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+  background-image: -ms-linear-gradient(bottom, #3A3A3A 50%, #444444 50%);
+  
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.5, #3A3A3A),
+    color-stop(0.5, #444444)
+  );
+}
+
+/**
+ * You can use these classes to hide parts
+ * of the countdown that you don't need.
+ */
+
+.countDays{ display:none !important; }
+.countDiv0{ display:none !important; }
+.countHours{ display:none !important; }
+.countDiv1{ display:none !important; }
+.countMinutes{}
+.countDiv2{}
+.countSeconds{}
+
+
+.countDiv{
+  display:inline-block;
+  width:16px;
+  height:1.6em;
+  position:relative;
+}
+
+.countDiv:before,
+.countDiv:after{
+  position:absolute;
+  width:5px;
+  height:5px;
+  background-color:#444;
+  border-radius:50%;
+  left:50%;
+  margin-left:-3px;
+  top:0.5em;
+  box-shadow:1px 1px 1px rgba(4, 4, 4, 0.5);
+  content:'';
+}
+
+.countDiv:after{
+  top:0.9em;
 }

@@ -5,10 +5,13 @@ WordWar::Application.routes.draw do
 
   get "static_pages/help"
   match '/about', to: 'static_pages#about'
+  match '/play', to: 'static_pages#play'
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

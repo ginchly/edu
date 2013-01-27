@@ -1,14 +1,21 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "WordWar", '#', id: "logo" %>
+      <%= link_to image_tag("ww_logo.png", alt: "word war logo"), root_path, id: "logo" %>
+      <%= link_to "WordWar", root_path, id: "logo-text" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home",    root_path %></li>
-          <li><%= link_to "Help",    '#' %></li>
-          <li><%= link_to "Sign in", '#' %></li>
+            <% if current_user %>
+              <li><%= link_to current_user.name, current_user %></li>
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+            <% else %>
+              <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+            <% end %>
         </ul>
       </nav>
     </div>
   </div>
 </header>
+
+
+
