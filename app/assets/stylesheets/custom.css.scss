@@ -25,11 +25,6 @@ html {
   overflow-y: scroll;
 }
 
-.game-container {
-  @media screen and (max-width: 979px) { 
-    padding-top: 200px;
-   }
-}
 
 section {
   overflow: auto;
@@ -182,11 +177,16 @@ footer {
   -webkit-border-radius: $largeBoxRadius;
   -moz-border-radius: $largeBoxRadius;
   border-radius: $largeBoxRadius;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
-  padding-top: 40px;
-  padding-bottom: 40px;
   padding-left: 2%;
   padding-right: 2%;
+
+  @media screen and (min-width: 640px) { 
+    padding-top: 40px;
+    padding-bottom: 40px;
+   }
 }
 
 .question-mark-box {
@@ -298,11 +298,15 @@ footer {
 
   .question-text {
     font-family: 'Kavoon', cursive;
-    font-size: 3em;
+    font-size: 1.5em;
     line-height: 1em;
     padding-top: 10px;
     padding-bottom: 20px;
     text-align: center;
+
+    @media screen and (min-width: 640px) { 
+      font-size: 3em;
+    }
   }
 
   #answer-buttons {
@@ -343,13 +347,16 @@ footer {
     font-size: 5em;
     line-height: 1em;
   }
+  @media screen and (max-width: 640px) { 
+    display: none;
+  }
 }
 
 
 //timer
 
 .countdownHolder{
-  width:450px;
+  width:100%px;
   margin:0 auto;
   font: 40px/1.5 'Open Sans Condensed',sans-serif;
   text-align:center;
