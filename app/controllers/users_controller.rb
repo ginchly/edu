@@ -10,4 +10,12 @@ class UsersController < ApplicationController
   def index
   	 @users = User.all
   end
+
+  def update_points
+  	updated_user = current_user
+  	updated_user.points = updated_user.points + Integer(params[:additional_points])
+  	updated_user.save
+
+  	redirect_to users_url
+  end
 end

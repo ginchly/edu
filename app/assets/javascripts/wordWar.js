@@ -49,7 +49,7 @@ function loadQuestion() {
 	//show question
 	var questions = JSON.parse(localStorage.getItem("questions"));
 	question = questions.all_questions[qNumber];
-	if (qNumber >= 5) {
+	if (qNumber >= 6) {
 		finishedQuiz();
 		return;
 	}
@@ -57,8 +57,8 @@ function loadQuestion() {
 	$("#answer").text("BLANK");
 	$("#part2").text(question.part2);
 
-
-
+	var questionClass = "#question-" + qNumber;
+	$(questionClass).addClass("active");
 	//render buttons
 	for (var i = 0; i < questions.all_questions.length; i++)  {
 		$("#answer-buttons").append("<button type='button' class='answer-btn btn btn-large btn-primary'>" + questions.all_questions[i].word + "</button>");
@@ -129,8 +129,16 @@ function finishQuestion() {
 
 function finishedQuiz() {
 	stopCountdown();
-	$("#answer").text("Game complete, you scored " + $("#number-points").text() + " points");
+	var pointsScored = $("#number-points").text();
+	$("#answer").text("Game complete, you scored " + pointsScored + " points");
 
-	//Submit score, show leaderboard
-	setTimeout(function() {window.location.href = "../users";}, 3000);
+	$.ajax({
+		url: "users/points?additional_points=" + pointsScored,
+		type: "post"
+		}).done(function ( data ) {
+			//Submit score, show leaderboard
+			//setTimeout(function() {window.location.href = "../users";}, 3000);
+			window.location.href = "../users";
+		});
+	
 }
