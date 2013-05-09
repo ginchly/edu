@@ -1,1 +1,7 @@
-WordWar - educational app developed during London Startup Weekend Edu 25-27 Jan 2013
+WordWar - responsive educational app developed during London Startup Weekend Edu 25-27 Jan 2013
+
+App is a quiz, giving you points for filling in the correct word in the sentence. 
+
+Fully responsive from phone to desktop
+
+Working demo at http://wordwar.herokuapp.com/
